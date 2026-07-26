@@ -14,28 +14,28 @@ public class WordleDictionary {
                 .filter(w -> w.length() == 5)
                 .toList();
 
-        if(this.words.isEmpty()){
+        if (this.words.isEmpty()) {
             throw new DictionaryException(
                     "Словарь пуст"
             );
         }
     }
 
-    public boolean contains(String word){
+    public boolean contains(String word) {
         return words.contains(
                 word.toLowerCase()
-                        .replace('ё','е')
+                        .replace('ё', 'е')
         );
     }
 
-    public String getRandomWord(){
+    public String getRandomWord() {
         Random random = new Random();
         return words.get(
                 random.nextInt(words.size())
         );
     }
 
-    public List<String> getWords(){
+    public List<String> getWords() {
         return words;
     }
 }
